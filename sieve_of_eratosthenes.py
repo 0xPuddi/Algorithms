@@ -2,7 +2,7 @@
 # Sieve of Eratosthenes algo:
 # Write a function that takes an integer n and returns a list,
 # based on the index, of Trues for prime numbers and False
-# for anything else starting from 2 (1 and 0 are false).
+# for anything else starting from 2 (1 and 0 are false by default).
 
 # Time Complexity: n*log(n)
 # It runs for every element less than n and for each p that is
