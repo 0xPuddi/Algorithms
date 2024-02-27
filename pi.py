@@ -2,7 +2,7 @@
 # Pi:
 #  Write a program that reads a positive integer N as a command-line argument
 #  and prints the value of the function pi(i) for every positive i < N, where
-# pi(i) is the number of prime numbers that are less than or equal to i.
+#  pi(i) is the number of prime numbers that are less than or equal to i.
 
 import sys
 
@@ -12,6 +12,8 @@ import sys
 
 # Space Complexity: O(n)
 # It uses a list of booleans and a single variable, thus n + 1 = n
+
+inp = int(input("Inster an integer: "))
 
 
 # we implement the sieve of Eratosthenes
@@ -71,4 +73,4 @@ def pi(n):
 
 
 # Runs
-pi(11)
+pi(inp)
