@@ -5,6 +5,7 @@
 # If there are two or more most common digits, the function must return
 # the smallest one.
 
+
 inp = input("Inster an integer digit: ")
 
 
