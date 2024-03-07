@@ -4,6 +4,8 @@
 # element left (an array with one element is always sorted). Then the sorted
 # subarrays are merged into one sorted array.
 
+from merge_ordered import merge
+
 # Time Complexity: O(n*log(n))
 # It always divides the array into two halves and takes linear time to
 # merge two halves.
@@ -53,5 +55,18 @@ def merge_sort(A):
     return A
 
 
+def merge_sort_merge_ordered(A):
+    if len(A) == 1:
+        return A
+
+    m = len(A) // 2
+
+    Al = merge_sort_merge_ordered(A[m:])
+    Ar = merge_sort_merge_ordered(A[:m])
+
+    return merge(Al, Ar)
+
+
 # Runs
 print(merge_sort(A))
+print(merge_sort_merge_ordered(A))
