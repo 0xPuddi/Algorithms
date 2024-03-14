@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # Partitions an array in place based on a pivot index element, if it is not provided
 # it chooses a random element in the array. The partition divides the array into smaller
-# or equal elements to the pivot, the pivot and greater elements than the pivot
+# or equal elements to the pivot, the pivot and greater elements than the pivot. Returns
+# the final pivot index
 
 import math
 import random
@@ -13,32 +14,34 @@ import random
 # We store only a few integers
 
 
-A = input("Enter numbers separated by spaces: ")
-A = A.split()
-A = [int(n) for n in A]
+def partition_array(A, begin=0, end=None):
+    if end == None:
+        end = len(A) - 1
 
-p = None
-pString = input("Enter partition pivot index (return to choose at random): ")
-if pString != "":
-    p = int(pi)
+    pI = begin + math.floor(random.random() * (end - begin))
+    A[pI], A[end] = A[end], A[pI]
 
-
-def partition_array(A, pI=None):
-    if pI == None:
-        pI = math.floor(random.random() * len(A))
-        print("Random index of: "+str(pI))
-        print("Of value: "+str(A[pI]))
-
-    A[pI], A[len(A) - 1] = A[len(A) - 1], A[pI]
-
-    q = 0
-    for i in range(len(A)):
-        if A[i] <= A[-1]:
+    q = begin
+    for i in range(begin, end):
+        if A[i] <= A[end]:
             A[q], A[i] = A[i], A[q]
             q = q + 1
 
-    A[q], A[len(A) - 1] = A[len(A) - 1], A[q]
+    A[q], A[end] = A[end], A[q]
+
+    return q
 
 
-partition_array(A, p)
-print(A)
+if __name__ == '__main__':
+    A = input("Enter numbers separated by spaces: ")
+    A = A.split()
+    A = [int(n) for n in A]
+
+    p = None
+    pString = input(
+        "Enter partition pivot index (return to choose at random): ")
+    if pString != "":
+        p = int(pi)
+
+    partition_array(A, p)
+    print(A)
