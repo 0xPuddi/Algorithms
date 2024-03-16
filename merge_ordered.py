@@ -9,19 +9,6 @@
 # We store the merged array
 
 
-A = []
-B = []
-# Uncomment to provide custom arrays
-# array = input("Insert integers separated by spaces: ")
-# A = [int(n) for n in array.split(" ")]
-# array2 = input("Insert integers separated by spaces: ")
-# B = [int(n) for n in array2.split(" ")]
-
-# Comment to provide custom arrays
-A = [2, 4, 5, 6, 23, 45, 67, 67, 89, 99]
-B = [1, 3, 56, 77, 88, 123, 124, 125]
-
-
 def merge(A, B):
     i = j = 0
     X = []
@@ -47,4 +34,17 @@ def merge(A, B):
     return X
 
 
-print(merge(A, B))
+if __name__ == "__main__":
+    A = []
+    B = []
+    # Uncomment to provide custom arrays
+    # array = input("Insert integers separated by spaces: ")
+    # A = [int(n) for n in array.split(" ")]
+    # array2 = input("Insert integers separated by spaces: ")
+    # B = [int(n) for n in array2.split(" ")]
+
+    # Comment to provide custom arrays
+    A = [2, 4, 5, 6, 23, 45, 67, 67, 89, 99]
+    B = [1, 3, 56, 77, 88, 123, 124, 125]
+
+    print(merge(A, B))

@@ -8,10 +8,30 @@ To run any algorithm simply,
 Clone the repo:
 ```sh
 git clone git@github.com:Puddi1/Algorithms.git ./algos
+cd algos
 ```
 
-Run a script:
+Create a python3 environment for the project:
 ```sh
-cd algos
+python3 -m venv .myvenv
+```
+
+Activate it:
+```sh
+source .myvenv/bin/activate
+```
+
+Install needed packages:
+```sh
+pip install -r requirements.txt
+```
+
+Finally, run a script:
+```sh
 python3 <script name>.py
+```
+
+To exit the environment:
+```sh
+deactivate
 ```

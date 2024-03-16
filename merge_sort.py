@@ -14,11 +14,6 @@ from merge_ordered import merge
 # All elements are stored in R and L arrays
 
 
-A = input("Enter numbers separated by spaces: ")
-A = A.split()
-A = [int(n) for n in A]
-
-
 def merge_sort(A):
     if len(A) > 1:
         pivot = len(A) // 2
@@ -67,6 +62,10 @@ def merge_sort_merge_ordered(A):
     return merge(Al, Ar)
 
 
-# Runs
-print(merge_sort(A))
-print(merge_sort_merge_ordered(A))
+if __name__ == "__main__":
+    A = input("Enter numbers separated by spaces: ")
+    A = A.split()
+    A = [int(n) for n in A]
+
+    print(merge_sort(A))
+    print(merge_sort_merge_ordered(A))
