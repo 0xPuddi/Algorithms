@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # Priority Queue:
-# insert(x, p):
-# dequeue():
+# insert(x, p): Insert element with value x and priority q in the queue
+# dequeue(): dequeue the first element and manatain the queue priority
 
 # Time Complexity: O(log(n))
 # Both insert and dequeue runs through the tree logn(n) at worse
@@ -11,10 +11,11 @@
 
 # Uncomment to provide custom input:
 # array = input("Insert a valid tree separated by spaces: ")
-# Q = [int(n) for n in array.split(" ")]
+# Q = [("", int(n)) for n in array.split(" ")]
 
-Q = [("zeroth", 51), ("first", 23), ("second", 7),
-     ("third", 10), ("fourth", 20), ("fifth", 7), ("sixth", 6)]
+Q = [("", 51), ("", 23), ("", 7),
+     ("", 10), ("", 20), ("", 7),
+     ("", 6)]
 
 
 # returns the parent index based on index i
@@ -53,7 +54,7 @@ def dequeue():
     Q[0], Q[-1] = Q[-1], Q[0]
     q = Q.pop()
 
-    # Heapify down the firs elemtn
+    # Heapify down the firs element
     i = 0
     while childrens(i)[0] < len(Q) - 1:
         chlds = childrens(i)
@@ -75,9 +76,9 @@ def dequeue():
 
 
 if __name__ == '__main__':
-    insert("seventh", 8)
+    insert("", 8)
     print(Q)
-    insert("second", 25)
+    insert("", 25)
     print(Q)
     print(dequeue())
     print(Q)
