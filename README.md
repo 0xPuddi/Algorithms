@@ -28,8 +28,10 @@ pip install -r requirements.txt
 
 Finally, run a script:
 ```sh
-python3 <script name>.py
+python3 ./src/algos/<script name>.py
 ```
+
+Or check out data strctures in `src/data-structures`
 
 To exit the environment:
 ```sh
