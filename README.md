@@ -26,14 +26,23 @@ Install needed packages:
 pip install -r requirements.txt
 ```
 
-Finally, run a script:
+Finally, run an algorithm from top level directory as a module:
 ```sh
-python3 ./src/algos/<script name>.py
+python3 -m src.algos.<script name>
 ```
 
-Or check out data strctures in `src/data-structures`
+Or a data strcture:
+```sh
+python3 -m src.data_structures.<script name>
+```
+
+Running files from top level directory as a module is needed as there are both algorithms and data structures, which are two submodules, that import each others.
 
 To exit the environment:
 ```sh
 deactivate
 ```
+
+
+## Todo
+The repo really needs some cleaning

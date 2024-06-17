@@ -8,11 +8,6 @@
 # We use only four variables, two bools and two integers.
 
 
-array = input("Insert integers separated by spaces: ")
-A = [int(n) for n in array.split(" ")]
-x = int(input("Insert integer you want to remove: "))
-
-
 def binary_search(A, x):
     l = 0
     r = len(A)
@@ -29,4 +24,9 @@ def binary_search(A, x):
     return False
 
 
-print(binary_search(A, x))
+if __name__ == "__main__":
+    array = input("Insert integers separated by spaces: ")
+    A = [int(n) for n in array.split(" ")]
+    x = int(input("Insert integer you want to remove: "))
+
+    print(binary_search(A, x))

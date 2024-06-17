@@ -23,18 +23,21 @@ class Queue():
         self.head = 0
 
     def enqueue(self, x):
-        assert self.next(self.tail) != self.head, "Queue Overflow"
+        assert not self.is_full(), "Queue Overflow"
         self.Q[self.tail] = x
         self.tail = self.next(self.tail)
 
     def dequeue(self):
-        assert self.tail != self.head, "Queue Underflow"
+        assert not self.is_empty(), "Queue Underflow"
         x = self.Q[self.head]
         self.head = self.next(self.head)
         return x
 
     def is_empty(self):
         return self.tail == self.head
+
+    def is_full(self):
+        return self.next(self.tail) == self.head
 
     def next(self, i):
         i = i + 1

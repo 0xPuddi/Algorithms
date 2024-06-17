@@ -4,8 +4,7 @@
 # around the picked pivot by placing the pivot in its correct position in the
 # sorted array.
 
-from partition_array import partition_array
-import random
+from src.algos.partition_array import partition_array
 
 # Worse Time Complexity: O(n^2)
 # At worse, pick always the boundary element, thus reducing the array into
@@ -23,11 +22,6 @@ import random
 # We store only a few integers
 
 
-A = input("Enter numbers separated by spaces: ")
-A = A.split()
-A = [int(n) for n in A]
-
-
 def quick_sort(A, begin=0, end=None):
     if end == None:
         end = len(A) - 1
@@ -35,9 +29,14 @@ def quick_sort(A, begin=0, end=None):
     if begin < end:
         pI = partition_array(A, begin, end)
 
-        quick_sort(A, begin, end - 1)
-        quick_sort(A, begin + 1, end)
+        quick_sort(A, begin, pI - 1)
+        quick_sort(A, pI + 1, end)
 
 
-quick_sort(A)
-print(A)
+if __name__ == "__main__":
+    A = input("Enter numbers separated by spaces: ")
+    A = A.split()
+    A = [int(n) for n in A]
+
+    quick_sort(A)
+    print(A)

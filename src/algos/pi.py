@@ -13,7 +13,7 @@ import sys
 # Space Complexity: O(n)
 # It uses a list of booleans and a single variable, thus n + 1 = n
 
-inp = int(input("Inster an integer: "))
+inp = int(input("Insert an integer: "))
 
 
 # we implement the sieve of Eratosthenes
