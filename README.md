@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 Finally, run an algorithm from top level directory as a module:
 ```sh
-python3 -m src.algos.<script name>
+python3 -m src.algorithms.<script name>
 ```
 
 Or a data strcture:
